@@ -20,10 +20,12 @@ dAlleles<-c(dAlleles,Vec-Init)
 }
 
 smoothScatter(dYear,dAlleles,colramp=Pal,nbin=100)
+
 pdf("006_plot_340n0h00s.pdf")
 smoothScatter(dYear, dAlleles,colramp=Pal,nbin=100,xlab="year",ylab="change in allele freq. since 1998")
 addFit(nruns=50,n=330,ngens=18,startT=1997,simCol="gray40",rescale=TRUE,s=0,h=1)
 dev.off()
+
 addFit(nruns=50,n=100,ngens=18,startT=1997,simCol="gray40",rescale=TRUE)
 addFit(nruns=50,n=340,ngens=18,startT=1997,simCol="gray40",rescale=TRUE,s=0,h=0)
 addFit()
