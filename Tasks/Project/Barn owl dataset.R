@@ -33,8 +33,12 @@ pdf("Project.DataAnalysis.Wing.Bill.pdf")
 Cols <- c("blue", "green", "purple")
 names(Cols) <- unique(barn.owls$Lineage)
 head(barn.owls)
-plot(barn.owls$Bill, barn.owls$Wing, col=Cols[barn.owls$Lineage], pch=16)
 
+pdf("Project.Bill&Wing.pdf")
+plot(log(barn.owls$Bill),log(barn.owls$Wing), xlab= "Bill Length (mm*10)",ylab="Wing Length (mm)", col=Cols[barn.owls$Lineage], pch=16)
+title("Comparing the Wing and Bill Length Between Species of Barn Owls")
+legend(5.1, 5.9, legend=c("T. Alba", "T. Furcata", "T. Javanica"), fill=c("blue","green","purple"))
+abline(lm(log(barn.owls$Bill)~log(barn.owls$Bill)),col='red')
 dev.off()
 
 barnowls2 <- barn.owls[c(1, 8, 9)]
