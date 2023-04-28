@@ -47,3 +47,12 @@ barnowls2
 #Pearsons Correlation coefficient = 0.643135
 
 correlation<-cor.test(x=barnowls2$Bill, y=barnowls2$Wing)
+
+??phyl.RMA
+phyl.RMA(x,y,tree,method="BM",lambda=NULL,fixed=FALSE)
+library("phytools")
+
+x 
+y
+phylomorphospace(tree,cbind(x,y),node.size=c(0,0))
+tree<-plot(x,y)
